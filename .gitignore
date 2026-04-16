@@ -1,0 +1,30 @@
+# Secrets and credentials
+.env
+google-ads.yaml
+credentials.json
+token.json
+.mcp.json
+
+# Service account keys
+**/service-account-key.json
+
+# Temporary processing files
+.tmp/
+
+# Claude Code local config
+.claude/
+
+# OS files
+.DS_Store
+.~lock.*
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Large binary assets
+*.pdf
+*.pptx
+*.xlsx
+*.docx
+*.zip
