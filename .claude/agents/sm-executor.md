@@ -47,6 +47,8 @@ Use the ClickUp MCP `clickup_update_task` tool with:
 ### Preview
 ![Post preview](<PREVIEW_IMAGE_URL>)
 
+<MEDIA_ACTION_LINK>
+
 _To approve all 3 drafts and send them to the Buffer queue: change this task status to **Approved**._
 _To request changes: leave a comment describing what to fix._
 
@@ -82,6 +84,19 @@ _To request changes: leave a comment describing what to fix._
 - **video** → use Buffer's generated thumbnail. After creating the draft, call `mcp__Buffer__get_post` with the FB or LI draft ID (whichever was created first) and grab `assets[0].thumbnail`. That URL is served by `images.buffer.com` and renders publicly in ClickUp markdown.
 - **photo** → use `https://lh3.googleusercontent.com/d/<drive_file_id>=s1600`. This is the Drive direct-serve URL that renders publicly (NOT `drive.google.com/uc?...`, which ClickUp can't follow).
 - **graphic** → use the Canva PNG export URL sm-creator already produced.
+
+### Media action link rules
+
+ClickUp's markdown description can't play video inline — only static images render. So after the thumbnail, add a bold action link that opens the real media. `<MEDIA_ACTION_LINK>` depends on hero format:
+
+- **video** → `**[▶ Watch the video](https://drive.google.com/file/d/<drive_file_id>/preview)**`
+  This opens Drive's video player in a lightbox with playback controls (pause, scrub, fullscreen). The `drive_file_id` is the one in the hero asset's `drive:video:<id>` catalog ID.
+- **photo** → `**[🔍 View full size](https://drive.google.com/file/d/<drive_file_id>/view)**`
+  Opens the photo at full resolution in Drive so Garrett can check detail.
+- **graphic** → `**[🎨 Open in Canva](https://www.canva.com/design/<design_id>/view)**`
+  Opens the exact Canva design so Garrett can see the tile at design-size with full fidelity. The `design_id` is the one returned by `create-design-from-candidate` in sm-creator — it's passed through in the PLAN / creator output.
+
+The goal: Garrett should be able to **see the real media** (video playback, full-size photo, or design-view graphic) with a single click from inside the ClickUp task before approving.
 
 ### If one or more platforms FAILED
 
