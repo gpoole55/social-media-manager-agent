@@ -2,7 +2,6 @@
 name: sm-creator
 description: Social media post creator. Takes the planner's plan and produces two Buffer drafts — one video post, one Canva graphic post. Writes captions, uploads to Canva, creates drafts via Buffer MCP.
 model: sonnet
-tools: Read, Bash, Glob, Grep
 color: green
 ---
 

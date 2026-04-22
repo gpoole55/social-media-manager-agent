@@ -2,7 +2,6 @@
 name: sm-planner
 description: Social Media Manager planner. Takes a task brief and selects the best video + photo assets from the Supabase catalog, then returns a structured plan for the creator.
 model: opus
-tools: Read, Glob, Grep, Bash
 color: purple
 ---
 
