@@ -106,7 +106,9 @@ Videos can't be watched directly. Instead:
 
 ## Using Content for Buffer Posts
 
-When scheduling a post with media via `tools/buffer_publish.py`, the `webContentLink` from Google Drive can be used as the asset URL. The file must have link sharing enabled.
+When passing a video to Buffer MCP's `create_post`, use the Drive `webContentLink` (or construct `https://drive.google.com/uc?id=<drive_file_id>&export=download`) as the `video` argument. The file must have link sharing enabled.
+
+For photos going through Canva, use `https://lh3.googleusercontent.com/d/<drive_file_id>=s2000` — the standard `drive.google.com/uc` URL does NOT work with Canva because Canva can't follow Drive's redirect chain.
 
 ## Content Naming Conventions
 
