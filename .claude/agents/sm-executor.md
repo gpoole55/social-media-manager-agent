@@ -2,7 +2,6 @@
 name: sm-executor
 description: Social media executor. Handles ClickUp task lifecycle (subtasks, status changes, handoffs, comments) and Buffer mechanical actions (promote, delete) via MCPs. No creative decisions.
 model: haiku
-tools: Read, Bash
 color: orange
 ---
 
